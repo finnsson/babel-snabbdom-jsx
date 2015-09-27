@@ -1,0 +1,28 @@
+{
+  "name": "babel-snabbdom-jsx",
+  "version": "0.1.0",
+  "description": "Babeljs plugin for snabbdom JSX",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/tmp.js",
+    "pretest": "npm run lint && npm run babel",
+    "babel": "babel test/test.jsx > test/tmp.js",
+    "lint": "eslint index.js"
+  },
+  "keywords": [
+    "babel",
+    "snabbdom",
+    "vdom",
+    "jsx"
+  ],
+  "author": "Oscar Finnsson",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "eslint": "^1.5.1",
+    "mocha": "^2.3.3",
+    "snabbdom": "^0.2.6"
+  }
+}
