@@ -7,7 +7,8 @@
     "test": "mocha test/tmp.js",
     "pretest": "npm run lint && npm run babel",
     "babel": "babel test/test.jsx > test/tmp.js",
-    "lint": "eslint index.js"
+    "lint": "eslint index.js",
+    "istanbul": "istanbul cover babel -- test/test.jsx --out-file test/tmp.js"
   },
   "keywords": [
     "babel",
@@ -17,11 +18,11 @@
   ],
   "author": "Oscar Finnsson",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel": "^5.8.23",
     "eslint": "^1.5.1",
+    "istanbul": "^0.3.21",
     "mocha": "^2.3.3",
     "snabbdom": "^0.2.6"
   }

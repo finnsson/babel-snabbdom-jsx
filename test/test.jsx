@@ -148,6 +148,53 @@ describe("loader", function() {
 
   });
 
+  it("should handle self closing tags", function() {
+    var dom = <span class="button"/>;
+
+    assert.equal("span", dom.sel);
+    assert.equal("button", dom.data.attrs.class);
+  });
+
+  it("should handle function tag name", function() {
+    var X = function() {};
+
+    var dom = <X class="foo"/>;
+
+    assert.equal(X, dom.sel);
+    assert.equal("foo", dom.data.attrs.class);
+  });
+
+  it("should handle this", function() {
+    this.FOO = function() {};
+
+    var dom = <div on-click={this.FOO}>test</div>;
+
+    assert.equal(this.FOO, dom.data.on.click);
+  });
+
+  it("should handle boolean attributes", function() {
+    var dom = <input checked name="ok"/>;
+
+    assert.equal("input", dom.sel);
+    assert.equal(true, dom.data.attrs.checked);
+  });
+
+  it("should handle empty expressions", function() {
+    var dom = <input>{}</input>;
+
+    assert.equal("input", dom.sel);
+    assert.equal(null, dom.children);
+
+  });
+
+  it("should handle this in tag name", function() {
+    this.FOO = function() {};
+
+    var dom = <this.FOO>test</this.FOO>;
+
+    assert.equal(this.FOO, dom.sel);
+  });
+
 // spread operator ... {...props} => props_={{props}}
 
 });

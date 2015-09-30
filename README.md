@@ -1,7 +1,15 @@
 # babel-snabbdom-jsx
 
-## TODO
+A [JSX](https://facebook.github.io/jsx/)-[Babel](https://babeljs.io)-plugin for [snabbdom](https://github.com/paldepind/snabbdom).
 
-* Complement documentation of JSX API based on info from https://facebook.github.io/jsx/
-* Put JSX-parser in same order as https://facebook.github.io/jsx/
-* Istanbul for test-cov
+See [tests](blob/master/test/test.jsx) for examples.
+
+## Contribute
+
+    $ npm install
+    $ npm run test
+
+Write your code
+
+    $ npm run test
+    $ npm run istanbul
