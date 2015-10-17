@@ -195,6 +195,19 @@ describe("loader", function() {
     assert.equal(this.FOO, dom.sel);
   });
 
+  it("should handle a child in code", function() {
+    var dom = <div>{ <span></span> }</div>;
+
+    assert.equal("span", dom.children[0].sel);
+  });
+
+  it("should handle children in code", function() {
+    var dom = <div>{ [<span></span>, <span></span>] }</div>;
+
+    assert.equal(2, dom.children.length);
+    assert.equal("span", dom.children[1].sel);
+  })
+
 // spread operator ... {...props} => props_={{props}}
 
 });

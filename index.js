@@ -63,7 +63,10 @@ module.exports = function(babel) {
 
         var args = [sel.value, openingElement];
         if (children.length) {
-          args.push(t.arrayExpression(children));
+          var emptyArray = t.arrayExpression([]);
+          var emptyArrayDotConcat = t.memberExpression(emptyArray, t.identifier("concat"));
+          var concatExpression = t.callExpression(emptyArrayDotConcat, children);
+          args.push(concatExpression);
         }
 
         return t.inherits(t.callExpression(t.identifier("h"), args), node);

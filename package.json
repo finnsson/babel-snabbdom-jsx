@@ -1,6 +1,6 @@
 {
   "name": "babel-snabbdom-jsx",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Babeljs plugin for snabbdom JSX",
   "main": "index.js",
   "scripts": {
