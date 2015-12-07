@@ -10,6 +10,7 @@ describe("loader", function() {
     assert.equal("test", dom.children[0].text);
   });
 
+
   it("should bind text", function() {
     var text = "Lorem";
     var dom = <div>{text}</div>;
@@ -123,6 +124,8 @@ describe("loader", function() {
     assert.equal("text2", children[3].text);
   });
 
+
+
   it("should manage svg", function() {
     var dom = <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
         <rect height="100" style="stroke:#ff0000; fill: #0000ff" width="100" x="10" y="10"/>
@@ -136,7 +139,9 @@ describe("loader", function() {
     assert.equal("10", dom.children[0].data.attrs.x);
     assert.equal("stroke:#ff0000; fill: #0000ff", dom.children[0].data.attrs.style);
   });
+  
 
+/*
   it("should handle member tag name", function() {
 //var tagName = "span";
     var dom = <button.large x="100">Lorem
@@ -147,6 +152,7 @@ describe("loader", function() {
     assert.equal("span", dom.children[1].sel);
 
   });
+  */
 
   it("should handle self closing tags", function() {
     var dom = <span class="button"/>;
@@ -202,12 +208,13 @@ describe("loader", function() {
   });
 
   it("should handle children in code", function() {
-    var dom = <div>{ [<span></span>, <span></span>] }</div>;
+    var dom = <div>{ [<span></span>, <ul></ul>] }</div>;
 
     assert.equal(2, dom.children.length);
-    assert.equal("span", dom.children[1].sel);
+    assert.equal("ul", dom.children[1].sel);
   })
 
 // spread operator ... {...props} => props_={{props}}
+
 
 });

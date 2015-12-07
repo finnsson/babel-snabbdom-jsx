@@ -1,10 +1,12 @@
 {
   "name": "babel-snabbdom-jsx",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Babeljs plugin for snabbdom JSX",
   "main": "index.js",
+  "repository": "https://github.com/finnsson/babel-snabbdom-jsx",
   "scripts": {
     "test": "mocha test/tmp.js",
+    "mocha": "mocha test/tmp.js",
     "pretest": "npm run lint && npm run babel",
     "babel": "babel test/test.jsx > test/tmp.js",
     "lint": "eslint index.js",
@@ -20,10 +22,13 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "babel": "^5.8.23",
-    "eslint": "^1.5.1",
-    "istanbul": "^0.3.21",
-    "mocha": "^2.3.3",
+    "babel": "^6.3.13",
+    "babel-cli": "^6.3.13",
+    "babel-plugin-syntax-jsx": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "eslint": "^1.10.3",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
     "snabbdom": "^0.2.6"
   }
 }

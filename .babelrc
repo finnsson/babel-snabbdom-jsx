@@ -1,6 +1,6 @@
 {
-  "plugins": ["./index"],
-  "blacklist": ["react"],
-  "ignore": ["node_modules", "./index.js"],
+  "plugins": ["syntax-jsx", "./index"],
+  "presets": ["es2015"],
+  "ignore": ["node_modules"],
   "sourceMaps": true
 }
