@@ -212,7 +212,16 @@ describe("loader", function() {
 
     assert.equal(2, dom.children.length);
     assert.equal("ul", dom.children[1].sel);
-  })
+  });
+
+  it("should insert insert-hook", function() {
+    var onInsert = function(vnode) {
+
+    };
+    var dom = <div hook-insert={onInsert}>test</div>;
+    assert.equal(onInsert, dom.data.hook.insert);
+
+  });
 
 // spread operator ... {...props} => props_={{props}}
 
