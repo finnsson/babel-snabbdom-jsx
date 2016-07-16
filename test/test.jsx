@@ -1,8 +1,20 @@
 var assert = require('assert');
 
-var h = require('snabbdom/h');
+var h_ = require('snabbdom/h');
 
 describe("loader", function() {
+
+  it("should transpile to the equivalent h call", function() {
+    var dom = <div>test</div>;
+    var dom2 = h_("div", {}, ["test"]);
+
+    assert.equal("div", dom.sel);
+    assert.equal("test", dom.children[0].text);
+
+    assert.deepEqual(dom, dom2);
+  });
+
+
   it("should contain text", function() {
     var dom = <div>test</div>;
 
@@ -139,7 +151,7 @@ describe("loader", function() {
     assert.equal("10", dom.children[0].data.attrs.x);
     assert.equal("stroke:#ff0000; fill: #0000ff", dom.children[0].data.attrs.style);
   });
-  
+
 
 /*
   it("should handle member tag name", function() {

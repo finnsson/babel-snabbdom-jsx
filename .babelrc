@@ -1,5 +1,9 @@
 {
-  "plugins": ["syntax-jsx", "./index"],
+  "plugins": [
+    "syntax-jsx",
+    ["./index", { "pragma": "h", }],
+    ["jsx-pragmatic", { "module": "snabbdom/h", "import": "h" }]
+  ],
   "presets": ["es2015"],
   "ignore": ["node_modules"],
   "sourceMaps": true
