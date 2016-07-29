@@ -20,7 +20,7 @@ module.exports = function (babel) {
   });
 
   visitor.Program = function (path, state) {
-    var id = "h"; //state.opts.pragma || "React.createElement";
+    var id = state.opts.pragma || "h";
 
     state.set("jsxIdentifier", id.split(".").map(function (name) {
       return t.identifier(name);
